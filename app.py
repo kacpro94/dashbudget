@@ -3,8 +3,9 @@ from dash import dcc, html, Input, Output, State, dash_table
 import sqlite3
 import pandas as pd
 
-app = dash.Dash(__name__)
-server=app.server
+import flask
+server = flask.Flask(__name__)  # Tworzymy serwer Flask ręcznie
+app = dash.Dash(__name__, server=server)  # Przekazujemy go do Dash
 
 # Funkcja do pobierania danych z bazy SQLite
 def fetch_data():
