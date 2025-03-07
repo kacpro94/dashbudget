@@ -4,6 +4,7 @@ import sqlite3
 import pandas as pd
 
 app = dash.Dash(__name__)
+server=app.server
 
 # Funkcja do pobierania danych z bazy SQLite
 def fetch_data():
